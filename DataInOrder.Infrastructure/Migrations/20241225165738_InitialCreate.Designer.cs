@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataInOrder.Infrastructure.Migrations
 {
-    [DbContext(typeof(PersonInfoContext))]
+    [DbContext(typeof(PersonContext))]
     [Migration("20241225165738_InitialCreate")]
     partial class InitialCreate
     {

@@ -4,16 +4,16 @@ using Microsoft.Extensions.Configuration;
 
 namespace DataInOrder.Infrastructure.DBContexts;
 
-public class PersonInfoContext: DbContext
+public class PersonContext: DbContext
 {
-    DbSet<PersonInfo> PersonsInfo { get; set; }
+    DbSet<Person> Persons { get; set; }
 
-    public PersonInfoContext()
+    public PersonContext()
     {
         Database.EnsureCreated();
     }
 
-    public PersonInfoContext(DbContextOptions<PersonInfoContext> options) 
+    public PersonContext(DbContextOptions<PersonContext> options) 
         : base(options) 
     {
         Database.EnsureCreated();

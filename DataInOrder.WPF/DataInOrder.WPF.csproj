@@ -8,4 +8,10 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DataInOrder.Application\DataInOrder.Application.csproj" />
+    <ProjectReference Include="..\DataInOrder.Domain\DataInOrder.Domain.csproj" />
+    <ProjectReference Include="..\DataInOrder.Infrastructure\DataInOrder.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
