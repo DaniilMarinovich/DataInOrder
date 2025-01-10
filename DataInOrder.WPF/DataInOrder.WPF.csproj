@@ -14,4 +14,12 @@
     <ProjectReference Include="..\DataInOrder.Infrastructure\DataInOrder.Infrastructure.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<Page Update="MainWindow.xaml">
+			<Generator>MSBuild:Compile</Generator>
+			<SubType>Designer</SubType>
+		</Page>
+	</ItemGroup>
+
+
 </Project>

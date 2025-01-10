@@ -5,8 +5,132 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataInOrder.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="DataInOrder" Height="450" Width="840">
     <Grid>
+        <DataGrid x:Name="personsGrid" AutoGenerateColumns="False" HorizontalGridLinesBrush="DarkGray" RowBackground="LightGray" AlternatingRowBackground="White">
+            <DataGrid.Columns>
+                
+                <!-- LastName -->
+                <DataGridTemplateColumn Width="160">
+                    <DataGridTemplateColumn.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Фамилия" VerticalAlignment="Center" />
+                            <ComboBox Width="18" Margin="5,0,0,0" SelectionChanged="OnDataGridSelectionChanged">
+                                <ComboBoxItem Content="Сортировать по возрастанию" Tag="LastNameAsc" />
+                                <ComboBoxItem Content="Сортировать по убыванию" Tag="LastNameDesc" />
+                                <ComboBoxItem Content="Поиск по фамилии" Tag="LastNameSearch" />
+                                <ComboBoxItem Content="Очистить фильтр" Tag="LastNameClearFilter" />
+                            </ComboBox>
+                        </StackPanel>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding LastName}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
 
+                <!-- FirstName -->
+                <DataGridTemplateColumn Width="100">
+                    <DataGridTemplateColumn.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Имя" VerticalAlignment="Center" />
+                            <ComboBox Width="18" Margin="5,0,0,0" SelectionChanged="OnDataGridSelectionChanged">
+                                <ComboBoxItem Content="Сортировать по возрастанию" Tag="FirstNameAsc" />
+                                <ComboBoxItem Content="Сортировать по убыванию" Tag="FirstNameDesc" />
+                                <ComboBoxItem Content="Поиск по имени" Tag="FirstNameSearch" />
+                                <ComboBoxItem Content="Очистить фильтр" Tag="FirstNameClearFilter" />
+                            </ComboBox>
+                        </StackPanel>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding FirstName}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- SurName -->
+                <DataGridTemplateColumn Width="160">
+                    <DataGridTemplateColumn.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Отчество" VerticalAlignment="Center" />
+                            <ComboBox Width="18" Margin="5,0,0,0" SelectionChanged="OnDataGridSelectionChanged">
+                                <ComboBoxItem Content="Сортировать по возрастанию" Tag="SurNameAsc" />
+                                <ComboBoxItem Content="Сортировать по убыванию" Tag="SurNameDesc" />
+                                <ComboBoxItem Content="Поиск по отчеству" Tag="SurNameSearch" />
+                                <ComboBoxItem Content="Очистить фильтр" Tag="SurNameClearFilter" />
+                            </ComboBox>
+                        </StackPanel>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding SurName}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- City -->
+                <DataGridTemplateColumn Width="140">
+                    <DataGridTemplateColumn.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Город" VerticalAlignment="Center" />
+                            <ComboBox Width="18" Margin="5,0,0,0" SelectionChanged="OnDataGridSelectionChanged">
+                                <ComboBoxItem Content="Сортировать по возрастанию" Tag="CityAsc" />
+                                <ComboBoxItem Content="Сортировать по убыванию" Tag="CityDesc" />
+                                <ComboBoxItem Content="Поиск по городу" Tag="CitySearch" />
+                                <ComboBoxItem Content="Очистить фильтр" Tag="CityClearFilter" />
+                            </ComboBox>
+                        </StackPanel>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding City}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Country -->
+                <DataGridTemplateColumn Width="140">
+                    <DataGridTemplateColumn.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Страна" VerticalAlignment="Center" />
+                            <ComboBox Width="18" Margin="5,0,0,0" SelectionChanged="OnDataGridSelectionChanged">
+                                <ComboBoxItem Content="Сортировать по возрастанию" Tag="CountryAsc" />
+                                <ComboBoxItem Content="Сортировать по убыванию" Tag="CountryDesc" />
+                                <ComboBoxItem Content="Поиск по стране" Tag="CountrySearch" />
+                                <ComboBoxItem Content="Очистить фильтр" Tag="CountryClearFilter" />
+                            </ComboBox>
+                        </StackPanel>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Country}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <!-- Date -->
+                <DataGridTemplateColumn Width="140">
+                    <DataGridTemplateColumn.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Дата" VerticalAlignment="Center" />
+                            <ComboBox Width="18" Margin="5,0,0,0" SelectionChanged="OnDataGridSelectionChanged">
+                                <ComboBoxItem Content="Сортировать по возрастанию" Tag="DateAsc" />
+                                <ComboBoxItem Content="Сортировать по убыванию" Tag="DateDesc" />
+                                <ComboBoxItem Content="Поиск по дате" Tag="DateSearch" />
+                                <ComboBoxItem Content="Очистить фильтр" Tag="DateClearFilter" />
+                            </ComboBox>
+                        </StackPanel>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Date}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

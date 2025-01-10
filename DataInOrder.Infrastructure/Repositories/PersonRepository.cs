@@ -4,7 +4,7 @@ using DataInOrder.Infrastructure.DBContexts;
 
 namespace DataInOrder.Infrastructure.Repositories
 {
-    public class PersonRepository: IPesonRepository
+    public class PersonRepository: IPersonRepository
     {
         readonly PersonContext _context;
         private Dictionary<string, string> filters;
@@ -15,6 +15,11 @@ namespace DataInOrder.Infrastructure.Repositories
             _context = context;
             filters = [];
             query = context.Persons;
+        }
+
+        public void AddRecord(Person person)
+        {
+            _context.Persons.Add(person);
         }
 
         public void AddFilter(string filter)
@@ -108,6 +113,11 @@ namespace DataInOrder.Infrastructure.Repositories
         public List<Person> GetFilteredPersons()
         {
             return [.. ApplyFilters()];
+        }
+
+        public void SaveChanges()
+        {
+            _context.SaveChanges();
         }
     }
 }
